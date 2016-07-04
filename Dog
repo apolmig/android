@@ -2,9 +2,10 @@ package cat.tarragona.impulsa.formacio.java;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 /**
- * Created by Miguel on 04/07/2016.
+ * Created by RP90634 on 04/07/2016.
  */
 public class Dog {
     // ponemos las variables en privado para que no se puedan modificar
@@ -15,13 +16,20 @@ public class Dog {
     private int plateNumber;
     private String skinColor;
     private float weight;
+    private boolean agresive;
 
-    public Dog() {
+
+    public Dog() { //lo convertimos en private en lugar de public para que nadie lo pueda llamar sino tiene los metodos / parametros
         // this.birthDate = Calendar.getInstance().getTime().getTime(); es lo mismo que lo de abajo
 
         Calendar calendar = Calendar.getInstance();
         Date date = Calendar.getTime();
         this.birthDate = date.getTime();
+
+    }
+
+    public Dog(HashMap<String, Object> parameters) {
+        this.agresive = parameters.get("agresive");
 
     }
 
@@ -56,10 +64,42 @@ public class Dog {
 
         cal.setTimeInMillis(this.birthDate);
         int birthYear = cal.get(Calendar.YEAR);
+        // todo: Check function return getTime
 
         cal.getTime();
         int currentYear = cal.get(Calendar.YEAR);
 
-
         return currentYear - birthYear;
-        
+
+
+    }
+    // eliminamos el "Set" birthdate porque no queremos que se pueda modificar, solo que se establezca al principio
+
+    // public void setBirthDate(long birthDate) {
+    //   this.birthDate = birthDate;
+    //}
+
+    public int getPlateNumber() {
+        return plateNumber;
+    }
+
+    public void setPlateNumber(int plateNumber) {
+        this.plateNumber = plateNumber;
+    }
+
+    public String getSkinColor() {
+        return skinColor;
+    }
+
+    public void setSkinColor(String skinColor) {
+        this.skinColor = skinColor;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+}
