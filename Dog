@@ -1,0 +1,65 @@
+package cat.tarragona.impulsa.formacio.java;
+
+import java.util.Calendar;
+import java.util.Date;
+
+/**
+ * Created by Miguel on 04/07/2016.
+ */
+public class Dog {
+    // ponemos las variables en privado para que no se puedan modificar
+    private char[] nameDog;
+    private String name;
+    private String ownerName;
+    private long birthDate;
+    private int plateNumber;
+    private String skinColor;
+    private float weight;
+
+    public Dog() {
+        // this.birthDate = Calendar.getInstance().getTime().getTime(); es lo mismo que lo de abajo
+
+        Calendar calendar = Calendar.getInstance();
+        Date date = Calendar.getTime();
+        this.birthDate = date.getTime();
+
+    }
+
+    public char[] getNameDog() {
+        return nameDog;
+    }
+
+    public void setNameDog(char[] nameDog) {
+        this.nameDog = nameDog;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public int getBirthDate() {
+        // TODO: Remove hardcoded value
+
+        Calendar Cal = Calendar.getInstance();
+
+        cal.setTimeInMillis(this.birthDate);
+        int birthYear = cal.get(Calendar.YEAR);
+
+        cal.getTime();
+        int currentYear = cal.get(Calendar.YEAR);
+
+
+        return currentYear - birthYear;
+        
