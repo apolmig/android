@@ -1,0 +1,38 @@
+package cat.tarragona.impulsa.formacio.java;
+
+import java.util.HashMap;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+
+        HashMap<String,Object> parameters = new HashMap<>();
+
+        parameters.put("name","Doggy");
+        parameters.put("owner","Tomas");
+        parameters.put("plate",123);
+        parameters.put("color","verde");
+        parameters.put("agresive",false);
+
+        parameters.put("otro parametro",4);
+
+
+        Dog lasie = new Dog (parameters);
+
+        // Dog doggy = new Dog("Doggy","Tomas",123,"verde",45.8f,false);
+        // ponemos la variable 'doggy' en minuscula, porque si empieza en mayuscula interpreta que es una clase
+
+        /*
+        doggy.setName("Doggy");
+        doggy.setOwnerName("Tomas");
+        doggy.setPlateNumber(123);
+        doggy.setSkinColor("verde");
+        doggy.setWeight(45.8f); // al ser un float, java cree k debe ser 'double' y x tanto hemos de poner un F para que lo tome como un float
+        */
+
+        System.out.println("Name: "+ doggy.getName());
+        // imprimimos la linea (ln), se hace asi tan complejo por seguridad
+
+    }
+}
